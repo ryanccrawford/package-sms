@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Order Tracking / Notification & Summary Information | Cable & Wire Shop</title>
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <link rel="stylesheet" href="{site_host}/package_sms/css/my_package.css" type="text/css">
+        <link href="{site_host}/jquery-mobile/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" type="text/css">
+        <link href="{site_host}/jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+        <link href="{site_host}/jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+        <link href="{site_host}/jQueryAssets/jquery.ui.button.min.css" rel="stylesheet" type="text/css">
+        <link href="{site_host}/jQueryAssets/jquery.ui.accordion.min.css" rel="stylesheet" type="text/css">
+        <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+        <script src="{site_host}/jquery-mobile/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <script src="{site_host}/jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+        <script src="{site_host}/jQueryAssets/jquery.ui-1.10.4.button.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="{site_host}/js/cleave.js"></script>
+        <script src="{site_host}/jQueryAssets/jquery.ui-1.10.4.accordion.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="{site_host}/jQueryAssets/collapsible.css">
+        <script type="text/javascript" src="{site_host}/jQueryAssets/jquery.collapsible.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script>
+    </head>
+
+    <body yahoo="yahoo">
+        <div class="ordernumber">Order Number: {order_number}</div>
+        <div class="ui-widget-header"></div>
+        <div class="barlogo"><a href="../" target="blank"><img src="{my_package_header_logo}" alt="" width="300" class="logo" /></a>
+        </div>
+        <div class="navbar">
+            <!-- begin menu_a --><a class="active" href="{menu_link1}" target="blank"><i class="{menu_link_icon1}"></i> Products</a><!-- end menu_a -->
+            <!-- begin menu_b --><a class="" href="{menu_link2}" target="blank"><i class="{menu_link_icon2}"></i> Knowledge Base</a><!-- end menu_b -->
+            <!-- begin menu_c --><a class="" href="{menu_link3}" target="blank"><i class="{menu_link_icon3}"></i> Support</a><!-- end menu_c -->
+            <!-- begin menu_d --><a class="" href="{menu_link4}" target="blank"><i class="{menu_link_icon4}"></i> Account</a><!-- end menu_d -->
+        </div>
+        <!-- begin error_message_block -->
+        <div id="errorMessages" class="errorMessages">{error_message}</div>
+        <!-- end error_message_block -->
+        <div class="content area">
+            <!-- begin section_one -->
+            <div class="section one">
+                <div class="sectiontable">
+                    <div class="tableheader">Estimated Delivery</div>
+                    <table width="100%" border="0" cellpadding="1px">
+                        <tbody>
+                            <tr>
+                                <td style="width:75px;">
+                                    <div class="daterow ship"><strong>{eta_dow}</strong></div>
+                                </td>
+                                <td class="centerbox" rowspan="2">
+                                    <!-- begin shipping_status_icon -->
+                                    <i id="st_icon" class="{shipping_status_icon}"></i>
+                                    <!-- end shipping_status_icon -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="daterow month-date ship">{eta_month}</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="daterow day-date ship">{dd}</div>
+                                </td>
+                                <td class="quickstatus" rowspan="1">Status<br>
+                                    <!-- begin shipping_status --> {current_status}
+                                    <!-- end shipping_status -->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="status">
+                        <div class="carrier">Tracking Number <div class="shipperinfo">
+                                <span><img class="shippinglogo" src="{shipping_icon}" alt="" /> {shipper_name} {tracking_number}</span></div>
+                        </div>
+                    </div>
+                    <div class="sectiontable maxhship scroll">
+                        <!-- begin status_tab -->
+                        <!-- begin location_history -->
+                        <div id="history" class="collapse-container"> {location_details} </div><!-- end location_history -->
+                        <!-- end status_tab -->
+                        <!-- begin details_tab -->
+                        <div id="details" class="collapse-container">
+                            <h1>Details</h1>
+                            <div>
+                                <p>{shipment_info}</p>
+                            </div>
+                        </div>
+                        <!-- end details_tab -->
+                        <!-- begin options_tab -->
+                        <div id="options" class="collapse-container">
+                            <h1>Options</h1>
+                            <div>
+                                <p>{shipping_options}</p>
+                            </div>
+                        </div>
+                        <!-- end options_tab -->
+                    </div>
+                    <div class="problem"><a href="../support.php" target="blank">Report a Problem.</a></div>
+                </div>
+                <script>
+                    $('#history').collapsible();
+                    $('#details').collapsible();
+                    $('#options').collapsible();
+                </script>
+            </div>
+            <!-- end section_one -->
+            <!-- begin section_two -->
+            <div class="section two">
+                <div class="sectiontable">
+                    <div class="tableheader">Delivery Notifications</div>
+                    <p style="text-align: center"><img src="{notify_icon}" alt="" class="status-message" /></p>
+                    <div style="text-align: center">Get Text Updates About Your Delivery</div>
+                </div>
+                <div class="notify">
+                    <div id="message"></div>
+                    <!-- begin notify_on -->
+                    <div id="phonemessage">
+                        <p style="color:green;border:1px solid green;background-color:lightgreen;padding:5px;border-radius:2px;">You are currently signed up for mobile updates!</p>
+                    </div>
+                    <!-- end notify_on -->
+                    <!-- begin notify_setup -->
+                    <div id="textform" class="text-update-form">
+                        <div id="phonemessages">
+                            <label for="phone">Mobile Phone Number</label><input id="phonenum" class="input-phone" name="phone" placeholder="Enter Mobile Phone" style="background-color: #fff;
+    border: 1px solid;" />
+                            <input id="orderid" type="hidden" value="{order_number}" />
+                        </div>
+                        <br>
+                        <div id="spinner" class="lds-dual-ring"></div><button id="text" onClick="send_sign_up();">Sign Up</button>
+                    </div>
+                    <!-- end notify_setup -->
+                </div>
+            </div>
+            <!-- end section_two -->
+            <!-- begin reviews_section -->
+            <div class="section bottom">
+                <div class="sectiontable">
+                    <div class="tableheader">Help Us Improve</div>
+                    <p>
+                        <p>Once your order arrives, please leave a quick product review. Thanks!</p>
+                        <div class="reviewslist scroll">
+                            <table class="reviewtable" cellpadding="3" cellspacing="1" width="100%">
+                                <tr class="tableheader" style="background-color: #E9E9E9;" align="center">
+                                    <th class="mpncol"></th>
+                                    <th class="mpncol">Product</th>
+                                    <th class="mpncol">MPN</th>
+                                    <th class="mpncol">Action</th>
+                                </tr>
+                                <!-- begin html_review_items --> {table_reviews}
+                                <!-- end html_review_items -->
+                            </table>
+                        </div>
+                </div>
+            </div>
+            <!-- end reviews_section -->
+            <!-- begin discount_section -->
+            <div class="section promo">
+                <div class="sectiontable">
+                    <div class="tableheader">Sign Up For Discounts</div>
+                    <div id="promoemail">
+                        <p>
+                            <input id="orderidpromo" type="hidden" value="{order_number}" />
+                            <div id="promomessage" class="promomesg"></div>
+                            <img id="promoimage" alt="PROMO EMAIL" src="/package_sms/images/promo_email_image.png" width="100%">
+                            <button type="button" id="promobutton" onClick="send_email_sign_up()" style="background: url(/package_sms/images/sign_up_promo_button.png)"></button>
+                        </p>
+                    </div>
+                </div>
+            </div><!-- end discount_section -->
+        </div>
+        <script>
+            // phone
+            var cleavePhone = new Cleave('.input-phone', {
+                phone: true,
+                phoneRegionCode: 'US'
+            });
+            var status_icon = document.querySelector('st_icon');
+            // <!-- begin icon_script -->
+            {
+                status_icon_script
+            }
+            // <!-- end icon_script -->
+            function send_email_sign_up() {
+                var click_link = document.getElementById('promobutton');
+                click_link.disabled = true;
+                var order_id = orderidpromo.value;
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    var click_link = document.getElementById('promobutton');
+                    var promo_message = document.getElementById('promomessage');
+                    var promo_image = document.getElementById('promoimage');
+                    if (this.readyState === 4 && this.status === 200) {
+                        if (this.responseText.length === "") {
+                            promo_message.innerHTML = "<p style='color:red; padding:2px; background-color:pink; border:1px solid red; border-radius:5px;'>Server Busy Try Again Later</p>";
+                            click_link.disabled = false;
+                            return;
+                        }
+                        var decode = JSON.parse(this.responseText);
+                        if (decode.errors !== "") {
+                            promo_message.innerHTML = decode.errors;
+                            click_link.style.display = "none";
+                            promo_image.style.display = "none";
+                            return;
+                        } else {
+                            if (!decode.success && decode.message !== "") {
+                                promo_message.innerHTML = "<p style='color:red; padding:2px; background-color:pink; border:1px solid red; border-radius:5px;'>" + decode.message + "</p>";
+                                click_link.style.display = "none";
+                                promo_image.style.display = "none";
+                                return;
+                            }
+                            if (decode.success && decode.message) {
+                                promo_message.innerHTML = "<p style='color:green; padding:2px; background-color:lightgreen; border:1px solid green; border-radius:5px;'>" + decode.message + "</p>";
+                                promo_image.style.display = "none";
+                                click_link.style.display = "none";
+                                return;
+                            }
+                        }
+                    }
+                };
+                var url = "promo_sign_up.php?orderid=" + order_id;
+                xhttp.open("GET", url, true);
+                xhttp.send();
+            }
+
+            function send_sign_up() {
+                var phoneinput = document.getElementById("phonenum");
+                var message = document.getElementById("message");
+                var orderid = document.getElementById("orderid");
+                var button = document.getElementById("text");
+                var wait = document.getElementById("spinner");
+                button.disabled = true;
+                wait.style.display = "inline-block";
+                message.innerHTML = "";
+                orderid = orderid.value;
+                var phonenumber = phoneinput.value;
+                if (phonenumber.length < 12 || !phonenumber.length || phonenumber == "") {
+                    message.innerHTML = "<p style='color:red; padding:2px; background-color:pink; border:1px solid red; border-radius:5px;'>You must enter a 10 didgit phone number.</p>"
+                    button.disabled = false;
+                    wait.style.display = "none";
+                    return;
+                }
+                phonenumber = phonenumber.replace(/\s/g, '');
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState === 4 && this.status === 200) {
+                        var button = document.getElementById("text");
+                        var wait = document.getElementById("spinner");
+                        var mess = document.getElementById("message");
+                        if (this.responseText.length === "") {
+                            mess.innerHTML = "<p style='color:red; padding:2px; background-color:pink; border:1px solid red; border-radius:5px;'>Unknown Error</p>";
+                            button.disabled = false;
+                            wait.style.display = "none";
+                            return;
+                        }
+                        var decode = JSON.parse(this.responseText);
+                        if (decode.errors !== "") {
+                            mess.innerHTML = decode.errors;
+                            button.disabled = false;
+                            wait.style.display = "none";
+                            return;
+                        } else {
+                            if (!decode.success && decode.message !== "") {
+                                mess.innerHTML = "<p style='color:red; padding:2px; background-color:pink; border:1px solid red; border-radius:5px;'>" + decode.message + "</p>";
+                                document.getElementById("textform").style.display = "none";
+                                button.disabled = false;
+                                wait.style.display = "none";
+                                return;
+                            }
+                            if (decode.success && decode.message) {
+                                mess.innerHTML = "<p style='color:green; padding:2px; background-color:lightgreen; border:1px solid green; border-radius:5px;'>" + decode.message + "</p>";
+                                document.getElementById("textform").style.display = "none";
+                                button.disabled = false;
+                                wait.style.display = "none";
+                                return;
+                            }
+                            if (decode.success) {
+                                mess.innerHTML = "<p style='color:green; padding:2px; background-color:lightgreen; border:1px solid green; border-radius:5px;'>Thank You!</p>";
+                                document.getElementById("textform").style.display = "none";
+                                button.disabled = false;
+                                wait.style.display = "none";
+                                return;
+                            }
+                        }
+                    }
+                };
+                var url = "get_notified.php?orderid=" + orderid + "&phonenumber=" + phonenumber;
+                xhttp.open("GET", url, true);
+                xhttp.send();
+            }
+        </script>
+    </body>
+
+</html>

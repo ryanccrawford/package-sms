@@ -1,0 +1,495 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Order Tracking / Notification & Summary Information | 3 Star Inc</title>
+		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet">
+
+		<link
+			href="{site_host}/package_sms/jquery-mobile/jquery.mobile.structure-1.3.0.min.css"
+			rel="stylesheet" type="text/css">
+		<link href="{site_host}/package_sms/jQueryAssets/jquery.ui.core.min.css"
+			rel="stylesheet" type="text/css">
+		<link href="{site_host}/package_sms/jQueryAssets/jquery.ui.theme.min.css"
+			rel="stylesheet" type="text/css">
+
+
+		<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+		<script src="{site_host}/package_sms/jquery-mobile/jquery-1.11.1.min.js"
+			type="text/javascript"></script>
+		<script src="{site_host}/package_sms/jquery-mobile/jquery.mobile-1.3.0.min.js"
+			type="text/javascript"></script>
+		<script
+			src="{site_host}/package_sms/jQueryAssets/jquery.ui-1.10.4.button.min.js"
+			type="text/javascript"></script>
+		<script type="text/javascript" src="{site_host}/package_sms/js/cleave.js"></script>
+		<link rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+			integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+			crossorigin="anonymous">
+		<link rel="stylesheet" href="{site_host}/package_sms/css/materialize.min.css">
+		<link href="{site_host}/package_sms/css/fix.css" rel="stylesheet"
+			type="text/css">
+		<link rel="stylesheet" href="{site_host}/package_sms/css/my_package.css"
+			type="text/css">
+	</head>
+	<body>
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper">
+					<a href="#!" class="brand-logo left tomargin"><img
+							src="{my_package_header_logo}" alt="" height="54" /></a>
+					<a href="#" data-target="mobile-menu" class="sidenav-trigger"><i
+							class="material-icons black-text">menu</i></a>
+					<ul class="right hide-on-med-and-down black-text movetoleft">
+						<!-- begin menu_a -->
+						<li class="black-text"><a href="{menu_link1}" target="blank"><i
+									class="{menu_link_icon1}"></i> Products</a></li>
+						<!-- end menu_a -->
+						<!-- begin menu_b -->
+						<li class="black-text"><a href="{menu_link2}" target="blank"><i
+									class="{menu_link_icon2}"></i> Knowledge Base</a></li>
+						<!-- end menu_b -->
+						<!-- begin menu_c -->
+						<li class="black-text"><a href="{menu_link3}" target="blank"><i
+									class="{menu_link_icon3}"></i> Support</a></li>
+						<!-- end menu_c -->
+						<!-- begin menu_d -->
+						<li class="black-text"><a href="{menu_link4}" target="blank"><i
+									class="{menu_link_icon4}"></i> Account</a></li>
+						<!-- end menu_d -->
+
+					</ul>
+				</div>
+			</nav>
+
+			<ul class="sidenav" id="mobile-menu">
+				<li>ORDER# {order_number}</li>
+				<!-- begin menu_a -->
+				<li class="black-text"><a href="{menu_link1}" target="blank"><i
+							class="{menu_link_icon1}"></i> Products</a></li>
+				<!-- end menu_a -->
+				<!-- begin menu_b -->
+				<li class="black-text"><a href="{menu_link2}" target="blank"><i
+							class="{menu_link_icon2}"></i> Knowledge Base</a></li>
+				<!-- end menu_b -->
+				<!-- begin menu_c -->
+				<li class="black-text"><a href="{menu_link3}" target="blank"><i
+							class="{menu_link_icon3}"></i> Support</a></li>
+				<!-- end menu_c -->
+				<!-- begin menu_d -->
+				<li class="black-text"><a href="{menu_link4}" target="blank"><i
+							class="{menu_link_icon4}"></i> Account</a></li>
+				<!-- end menu_d -->
+			</ul>
+		</div>
+
+		<div class="container">
+			<!-- begin error_message_block -->
+			<div id="errorMessages" class="errorMessages">{error_message}</div>
+			<!-- end error_message_block -->
+			<div id="modal1" class="modal">
+				<div class="modal-content">
+					<h3>Coupon Code</h3>
+
+					<div id="promomessage" class="promomesg"></div>
+
+				</div>
+				<div class="modal-footer"> <a href="#!" class="modal-close waves-effect
+						waves-green btn-flat">Done</a> </div>
+			</div>
+			<div class="row">
+				<div class="col s8 push-s2 m6 l5">
+
+					<!-- begin section_one -->
+					<div class="card {section_one_card_size}">
+						<!-- begin not_delivered -->
+						<div class="card-content">
+							<span class="card-title activator center">Estimated Delivery<i
+									class="material-icons right tooltipped" data-position="top"
+									data-tooltip="Click For Tracking Details">more_vert</i></span>
+							<table width="100%" border="0" cellpadding="1px">
+								<tbody>
+									<tr style="border:none !important;">
+										<td style="width:50%;"><div class="daterow ship"><strong>{eta_dow}</strong></div></td>
+										<td class="centerbox quickstatus" rowspan="3">
+											<!-- begin shipping_status_icon -->
+											<i id="st_icon" class="{status_icon}"></i>
+											<!-- end shipping_status_icon -->
+											Status<br>
+											<!-- begin shipping_status -->
+											<a class="tooltipped currentstatus" data-position="top"
+												data-tooltip="{tool_tip}">{current_status}</a>
+											<!-- end shipping_status -->
+										</td>
+									</tr>
+									<tr style="border:none !important;">
+										<td><div class="daterow month-date ship">{eta_month}</div></td>
+										<td class="centerbox">
+
+										</td>
+									</tr>
+									<tr style="border:none !important;">
+										<td><div class="daterow day-date ship">{dd}</div></td>
+										<td>
+
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+
+
+							<div class="status">
+								<div class="carrier">Tracking Number
+									<div class="shipperinfo">
+										<span><img class="shippinglogo activator" src="{shipping_icon}" alt=""
+												/> {shipper_name} {tracking_number}</span></div></div>
+							</div>
+						</div>
+						<!-- end not_delivered -->
+						<!-- begin delivered -->
+						<div class="card-content">
+							<span class="card-title activator center">Package Was Delivered<i
+									class="material-icons right tooltipped" data-position="top"
+									data-tooltip="Click For Tracking Details">more_vert</i></span>
+							<table width="100%" border="0" cellpadding="1px">
+								<tbody>
+									<tr style="border:none !important;">
+										<td class="centerbox quickstatus" rowspan="3">
+											<!-- begin shipping_status_icon -->
+											<i id="st_icon" class="{status_icon}"></i>
+											<!-- end shipping_status_icon -->
+											Status<br>
+											<!-- begin shipping_status -->
+											<a class="tooltipped currentstatus" data-position="top"
+												data-tooltip="{tool_tip}">{current_status}</a>
+											<!-- end shipping_status -->
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+
+
+							<div class="status">
+								<div class="carrier">Tracking Number
+									<div class="shipperinfo">
+										<span><img class="shippinglogo activator" src="{shipping_icon}" alt=""
+												/> {shipper_name} {tracking_number}</span></div></div>
+							</div>
+							<!-- begin discount_section -->
+
+							<div id="promoemail" class="center">
+								<img id="promoimage" alt="PROMO EMAIL"
+									src="/package_sms/images/promo_email_image.png">
+								<input id="orderidpromo" type="hidden" value="{order_number}" />
+								<div id="promomessage" class="promomesg"></div>
+								<button type="submit" data-target="modal1" class="center btn
+									modal-trigger" id="promobutton" onClick="send_email_sign_up();"
+									style="font-size:.9em;">Get Your Code!</button>
+							</div>
+							<!-- end discount_section -->
+
+						</div>
+
+						<!-- end delivered -->
+						<div class="card-reveal">
+							<span class="card-title">Tracking Details<i class="material-icons right">close</i></span>
+							<div class="sectiontable maxhship scroll">
+								<!-- begin status_tab --><!-- begin location_history -->
+								<div id="history" class="collapse-container">
+
+									{location_details}
+
+								</div><!-- end location_history -->
+								<!-- end status_tab -->
+								<!-- begin details_tab -->
+								<div id="details" class="collapse-container">
+
+									<h1>Details</h1>
+									<div>
+										<p>{shipment_info}</p>
+									</div>
+
+								</div>
+								<!-- end details_tab -->
+								<!-- begin options_tab -->
+								<div id="options" class="collapse-container">
+
+									<h1>Options</h1>
+									<div>
+										<p>{shipping_options}</p>
+									</div>
+
+								</div>
+								<!-- end options_tab -->
+
+							</div>
+							<div class="problem"><a href="../support.php" target="blank">Report a
+									Problem.</a></div>
+
+						</div>
+
+					</div>
+					<!-- end section_one -->
+					<!-- begin section_two -->
+					<div class="card medium">
+						<div class="card-content">
+							<span class="card-title center">Delivery Notifications</span>
+							<p style="text-align: center"><img src="{notify_icon}" alt=""
+									class="status-message" /></p>
+							<div style="text-align: center">Get Text Updates About Your Delivery</div>
+							<div class="notify">
+								<div id="message"></div>
+								<!-- begin notify_on -->
+								<div id="phonemessage">
+									<p style="color:green;border:1px solid
+										green;background-color:lightgreen;padding:5px;border-radius:2px;">You
+										are currently signed up for mobile updates!</p>
+								</div>
+								<!-- end notify_on -->
+								<!-- begin notify_setup -->
+								<div id="textform" class="text-update-form">
+									<div id="phonemessages">
+										<label for="phone">Mobile Phone Number</label><input id="phonenum"
+											class="input-phone" name="phone" placeholder="Enter Mobile Phone"
+											style="background-color: #fff;border: 1px solid;" />
+										<input id="orderid" type="hidden" value="{order_number}" />
+									</div>
+									<br>
+									<div id="spinner" class="lds-dual-ring"></div>
+
+									<button id="text" onClick="send_sign_up();">Sign Up</button>
+								</div>
+								<!-- end notify_setup -->
+							</div>
+						</div>
+					</div>
+					<!-- end section_two -->
+				</div>
+				<div class="col s12 m6 l7">
+
+
+					<!-- begin reviews_section -->
+					<div class="card medium">
+
+						<div class="card-content">
+							<span class="card-title center">Rate & Review Products</span>
+							<p
+								style="font-size:.9em;padding-top:5px;padding-bottom:5px;text-align:center;">Once
+								your order arrives, please leave a quick product rating. It will help
+								others wanting to know more about our products.</p>
+							<div class="reviewslist">
+								<table class="reviewtable" width="100%">
+									<tr class="tableheader" style="background-color:
+										#E9E9E9;text-align:center;" align="center">
+										<th class="mpncol center"></th>
+										<th class="mpncol center">Product</th>
+										<th class="mpncol center">Action</th>
+									</tr>
+									<!-- begin html_review_items -->
+									{table_reviews}
+									<!-- end html_review_items -->
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- end reviews_section -->
+
+
+					<!-- begin recommended_items_section -->
+
+
+					<div class="card">
+
+						<div class="card-content">
+							<span class="card-title center">You Might Be Interested In</span>
+							<!-- begin recommended_items -->
+							{recommended_items_display}
+							<!-- end recommended_items -->
+						</div>
+					</div>
+
+
+					<!-- end recommended_items_section -->
+				</div>
+			</div>
+			<script>
+// phone
+
+var cleavePhone = new Cleave('.input-phone', {
+    phone: true,
+    phoneRegionCode: 'US'
+});
+
+var status_icon = document.querySelector('st_icon');
+// <!-- begin icon_script -->
+{status_icon_script}
+// <!-- end icon_script -->
+
+
+function send_email_sign_up(){
+    var click_link = document.getElementById('promobutton');
+    click_link.disabled = true;
+    var order_id = orderidpromo.value;
+       
+    var xhttp = new XMLHttpRequest();
+	
+	xhttp.onreadystatechange = function() {
+                            var click_link = document.getElementById('promobutton');
+                            var promo_message = document.getElementById('promomessage');
+                            var promo_image = document.getElementById('promoimage');
+                            
+		if (this.readyState === 4 && this.status === 200) {
+                           
+                    if(this.responseText.length === ""){
+                                promo_message.innerHTML = "<p style='color:red; padding:2px; background-color:pink; border:1px solid red; border-radius:5px;'>Server Busy Try Again Later</p>";
+                                click_link.disabled = false;
+                                return;
+                        }
+                                
+                    var decode = JSON.parse(this.responseText);
+                        
+                    if(decode.errors !== ""){
+                                promo_message.innerHTML = decode.errors;
+                                click_link.style.display = "none";
+								promo_image.style.display = "none";
+                                return;
+                    }else{
+                        
+                        if(!decode.success && decode.message !== ""){
+                            promo_message.innerHTML = "<p style='color:red; padding:2px; background-color:pink; border:1px solid red; border-radius:5px;'>"+decode.message+"</p>";
+                            click_link.style.display = "none";
+                            promo_image.style.display = "none";
+                            return;
+                        }
+                        
+                        if(decode.success && decode.message){
+
+                            promo_message.innerHTML = "<p style='color:green; padding:2px; background-color:lightgreen; border:1px solid green; border-radius:5px;'>"+decode.message+"</p>";
+                            promo_image.style.display = "none";       
+                            click_link.style.display = "none";
+                            return;
+                        }
+                        
+                                                   
+                    }
+                }
+                
+	};
+		var url = "promo_sign_up.php?orderid="+order_id;
+		xhttp.open("GET", url , true);
+		xhttp.send();
+    
+}
+
+function send_sign_up(){
+		var phoneinput = document.getElementById("phonenum");
+                var message = document.getElementById("message");
+                var orderid = document.getElementById("orderid");
+                var button = document.getElementById("text");
+                var wait = document.getElementById("spinner");
+                button.disabled = true;
+                wait.style.display = "inline-block";
+                message.innerHTML = "";
+                orderid = orderid.value;
+                var phonenumber = phoneinput.value;
+		if (phonenumber.length < 12 || !phonenumber.length || phonenumber == ""){
+                message.innerHTML = "<p style='color:red; padding:2px; background-color:pink; border:1px solid red; border-radius:5px;'>You must enter a 10 didgit phone number.</p>"	
+            button.disabled = false;
+                wait.style.display = "none";
+            return;
+		}
+		phonenumber = phonenumber.replace(/\s/g,'');
+		
+		var xhttp = new XMLHttpRequest();
+	
+	xhttp.onreadystatechange = function() {
+                    
+		if (this.readyState === 4 && this.status === 200) {
+                              var button = document.getElementById("text");
+                              var wait = document.getElementById("spinner");
+                              var mess = document.getElementById("message");
+                    
+                        if(this.responseText.length === ""){
+                                mess.innerHTML = "<p style='color:red; padding:2px; background-color:pink; border:1px solid red; border-radius:5px;'>Unknown Error</p>";
+                                button.disabled = false;
+                                wait.style.display = "none";
+                                return;
+                        }
+                                
+                        var decode = JSON.parse(this.responseText);
+                        
+                        if(decode.errors !== ""){
+                                mess.innerHTML = decode.errors;
+                                button.disabled = false;
+                                wait.style.display = "none";
+                                return;
+                        }else{
+                                    if(!decode.success && decode.message !== ""){
+                                        mess.innerHTML = "<p style='color:red; padding:2px; background-color:pink; border:1px solid red; border-radius:5px;'>"+decode.message+"</p>";
+                                        document.getElementById("textform").style.display = "none";
+                                        button.disabled = false;
+                                        wait.style.display = "none";
+                                        return;
+                                    }
+                                     if(decode.success && decode.message){
+                                     
+                                        mess.innerHTML = "<p style='color:green; padding:2px; background-color:lightgreen; border:1px solid green; border-radius:5px;'>"+decode.message+"</p>";
+                                        document.getElementById("textform").style.display = "none";
+                                        button.disabled = false;
+                                        wait.style.display = "none";
+                                        return;
+                                     }
+                                    if(decode.success){
+                                         mess.innerHTML = "<p style='color:green; padding:2px; background-color:lightgreen; border:1px solid green; border-radius:5px;'>Thank You!</p>";
+                                         document.getElementById("textform").style.display = "none";
+                                         button.disabled = false;
+                                         wait.style.display = "none";             
+                                         return;
+                                     }                                
+                                 }
+                      }};
+		var url = "get_notified.php?orderid="+orderid+"&phonenumber="+phonenumber;
+		xhttp.open("GET", url , true);
+		
+		xhttp.send();
+		
+}
+
+
+
+
+</script>
+		</body>
+		<!-- Compiled and minified JavaScript -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+</script>
+		<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems);
+  });
+  
+  </script>
+		<script>
+  {status_icon_script}
+  </script>
+	</html>

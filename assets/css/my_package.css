@@ -1,0 +1,471 @@
+@charset "utf-8";
+/* CSS Document */
+
+.lds-dual-ring {
+    top: -39px;
+    display: none;
+    left: 83px;
+    position: relative;
+}
+.lds-dual-ring::after {
+    content: " ";
+    position: absolute;
+    z-index: 300000;
+    width: 46px;
+    height: 46px;
+    margin: 1px;
+    border-radius: 60%;
+    border: 5px solid #000;
+    border-color: #ddd transparent #ddd transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#st_icon{
+
+display:block;	
+	color:sandybrown;
+}
+
+.center{
+text-align:center;	
+	width:100%;
+}
+
+.sectiontable{
+font-size:12px;	
+}
+
+.bottom {
+    height: auto;
+    min-height: 500px;
+    /* min-width: 321px; */
+    float: left;
+    width: 35%;
+}
+.promo {
+    height: auto;
+    min-height: 500px;
+    float:left;
+    min-width:300px;
+    width: 20%;
+}
+.one {
+  	height: auto;
+  	min-height: 500px;
+  	min-width: 300px;
+  	width: 20%;
+  	float: left;
+}
+
+.two {
+   	height: auto;
+    min-height: 500px;
+    min-width: 300px;
+    width: 25%;
+    float: left;
+}
+
+
+
+
+.notify {
+    text-align:center;
+    padding:5px;	
+    font-weight:600;
+    font-family: 'Oswald', sans-serif !important;
+    z-index: 100;
+}
+
+.logo {
+  
+    /* float: left; */
+}
+#phonemessages{
+	
+	z-index:100;
+	}
+
+
+.month-date{
+   
+    font-size:15px !important;	
+    color:#000000;
+    font-weight:800;
+}
+
+.day-date{
+	font-size: 75px !important;
+	color: #ffa700  !important;
+	text-align: center;
+}
+
+
+.text-update-form{
+    margin-top:20px;
+    text-align:center;	
+}
+
+.status-message{
+	height: 25%;
+	padding-top: 10px;
+	text-align: center;
+	min-width: 0px;
+}
+.tracking-number{
+    display:block;
+    padding:10px;
+}
+.textinfo{
+    font-size:25px;
+}
+
+#textnotify{
+    width:100%;
+    padding:5px;
+    background-color:blue;
+    color:white;
+}
+
+#text {
+    margin-bottom: 15px;
+    width: 80%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #AAAAAA;
+    font-size: 13px;
+}
+.input-credit-card {
+    margin-bottom: 5px;
+}
+input {
+    -webkit-appearance: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #fff;
+    line-height: 30px;
+    vertical-align: middle;
+    height: 33px;
+    width: 80%;
+    font-size: 14px;
+    padding: 0 8px;
+    margin-bottom: 15px;
+    text-align:center;
+}
+
+.input-numeral {
+    text-align: center;
+}
+
+
+
+
+.shippinglogo{
+   padding-right: 5px;
+   max-height:32px;
+   max-width: 130px;
+   vertical-align: middle;
+}
+
+
+.centerbox{
+    text-align: center;
+        vertical-align: bottom;
+}
+.quickstatus{
+     text-align: center;
+     font-family: arial;
+     font-weight: bold;
+     vertical-align: middle;
+    
+}
+
+
+
+
+
+#text {
+    height: 50px !important;
+}
+
+th.mpncol {
+    width: 15%;
+}
+
+
+
+
+
+.shipperinfo {
+    text-align: center;
+}
+
+.shipperinfo {
+    
+    text-align: center;
+   
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+	 font-weight: 200;
+}
+.shipperinfo img{
+   padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+.carrier {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 600;
+    border-top: 1px solid black;
+	 padding-top: 10px;
+}
+
+#mask {
+    display: none;
+    background: #000;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    z-index: 999;
+}
+
+
+
+img.btn_close {
+    
+	float: right;
+    margin: -28px -28px 0 0;
+}
+
+fieldset {
+    border: none;
+}
+
+
+#textinput{
+width:100%;	
+vertical-align:middle;
+text-align:right;	
+
+}
+.table-button{
+	width:90px;
+	
+	color:white !important;
+	font-weight:600;
+}
+.disclamer{
+	font-family: "Courier New";
+    display:none;
+    font-size: 8px;
+    text-align: left !important;
+    width: 350px;
+    padding-left: 3%;
+
+	
+}
+.button-box {
+	
+}
+#errors{
+   
+    position:relative;
+   
+	margin-bottom:0;
+		
+	
+	
+}
+
+.scroll {
+    overflow-y: auto;
+       max-height: 80%;
+}
+
+#errorMessages {
+    right: 1em;
+    background-color: #131212;
+    position: absolute;
+    left: 1em;
+    top: 50%;
+    margin-left: 27em;
+    padding: 20px;
+    margin-right: 26em;
+    color: white;
+    text-align: center;
+    border: 4px solid red;
+    border-radius: 20px;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.reviewslist{
+      height: 300px;
+    overflow-y: auto;
+}
+.card .card-content {
+    padding: 5px !important;
+}
+.ui-page.ui-body-c.ui-page-active {
+    background-color: #d5d6d8;
+}
+
+.card-title{
+	
+	    background-color: #19C;
+    color: #ffffff;}
+	
+
+
+.brand-logo {
+
+
+}
+
+.currentstatus{
+	
+	
+}
+
+td, th{
+	    text-align: unset;
+}
+
+.problem a{
+	font-size:8px;
+}
+
+#promoimage{
+width:100%;	
+text-align:center;
+	}
+
+#promobutton{
+color: #000 !important;
+   
+}
+.nav-wrapper{
+	background-color: white !important;
+}
+
+.product {
+    display: grid;
+	border-collapse: unset !important;
+   }
+   .producttitle a{
+	font-weight:700;
+	color:black;
+	   
+   }
+   
+   .producttable {
+	border-right:1px solid darkgrey;
+	   
+   }    
+   .producttitle {
+	border-bottom: 1px dashed lightgrey; 
+   }
+   .recompn{
+	padding:4px;   
+   }
+   .price {
+    width: 40%;
+ 
+ }
+ 
+ .movetoleft {
+    margin-right: 10%;
+}
+
+nav a{
+color:black !important;	
+	
+}
+
+@media screen and (max-width: 993px) {
+    .product {
+    display: inline-block;
+	border-collapse: unset !important;
+	width:50% !important;
+   }
+   .producttitle a{
+	font-weight:400;
+	color:black;
+	   
+   }
+   
+   .producttable {
+	border-right:1px solid darkgrey;
+	   
+   }    
+   .producttitle {
+	border-bottom: 1px dashed lightgrey; 
+   }
+   .recompn{
+	padding:4px;   
+   }
+   .price {
+    width: 40%;
+ 
+ }
+
+
+}
+
+@media screen and (max-width: 450px) {
+    .product {
+    display: inline;
+	border-collapse: unset !important;
+	width:100% !important;
+   }
+   .producttitle a{
+	font-weight:400;
+	color:black;
+	   
+   }
+   
+   .producttable {
+	border-right:1px solid darkgrey;
+	   
+   }    
+   .producttitle {
+	border-bottom: 1px dashed lightgrey; 
+   }
+   .recompn{
+	padding:4px;   
+   }
+   .price {
+    width: 40%;
+ 
+ }
+ .product img{
+	width:50%; 
+ }
+
+}
+
+.tomargin {
+    margin-left: 18%;
+}
+
+.half {
+    width: 50%;
+    text-align: center;
+}
+.half img{
+	text-align:center;
+	
+}
